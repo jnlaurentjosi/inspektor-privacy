@@ -1,6 +1,6 @@
 # Privacy Policy for Inspektor: Make Your Bed
 
-**Effective date: August 12, 2026**
+**Effective date: August 20, 2026**
 
 Inspektor: Make Your Bed ("Inspektor", "the app") is a morning alarm and AI room-inspection app for iOS. You photograph your room, an AI model analyses the photos, and you receive a cleanliness score and a fictional "military sergeant" verdict.
 
@@ -8,9 +8,9 @@ This policy explains what data the app handles, where it goes, and what your rig
 
 ## The short version
 
-**Inspektor has no accounts, no sign-up, no login, and no user database.** We do not know your name or your email address, and we cannot link any inspection to a person. Everything the app knows about you (your photos, your scores, your streaks, your alarm times) lives on your iPhone, and only on your iPhone. Deleting the app deletes all of it.
+**Inspektor has no accounts, no sign-up, no login, and no user database.** We do not know your name or your email address, and we cannot link any inspection to a person. Everything the app knows about you (your scores, your streaks, your alarm times) lives on your iPhone, and only on your iPhone. Deleting the app deletes all of it.
 
-The one thing that leaves your device is the photos you choose to submit for inspection. They are sent, over an encrypted connection, through a small relay server we operate and on to Anthropic (the company behind the Claude AI model) so the analysis can be produced. Our relay does not store your photos or your results; it keeps only short-lived technical logs (see section 3). Anthropic processes your photos to return the analysis and automatically deletes API inputs and outputs from its systems within 30 days; it does not use them to train its AI models.
+The one thing that leaves your device is the photos you choose to submit for inspection. And your photos are not kept, either: once the analysis is done, the app deletes them. Only your scores, verdicts, streaks, and settings remain. The photos you submit are sent, over an encrypted connection, through a small relay server we operate and on to Anthropic (the company behind the Claude AI model) so the analysis can be produced. Our relay does not store your photos or your results; it keeps only short-lived technical logs (see section 3). Anthropic processes your photos to return the analysis and automatically deletes API inputs and outputs from its systems within 30 days; it does not use them to train its AI models.
 
 The score you receive is generated automatically by an AI model. It is a coaching score inside a habit app: it has no legal or similarly significant effect on you (see section 4).
 
@@ -32,7 +32,7 @@ We have not designated a Data Protection Officer, because the scale and nature o
 
 | Data | What happens to it | Why | Leaves your device? |
 |---|---|---|---|
-| **Room photos** (typically 2 per inspection, plus an optional "benchmark" photo of your room at its best) | Sent over HTTPS through our relay server to Anthropic's Claude API to generate your inspection score and verdict. Stored **only on your device** afterwards, as part of your inspection history. | To provide the core AI inspection feature. | Yes, transiently, for analysis only (see section 3). |
+| **Room photos** (typically 2 per inspection, plus an optional "benchmark" photo of your room at its best) | Sent over HTTPS through our relay server to Anthropic's Claude API to generate your inspection score and verdict. **Deleted from your device automatically once the analysis is complete.** The benchmark photo is converted once into a short text description of your room's standard, stored on your device, and the photo itself is then deleted. | To provide the core AI inspection feature. | Yes, transiently, for analysis only (see section 3). |
 | **Inspection history** (scores, verdicts, deltas, dates) | Stored locally on your device. | So you can see your progress, streaks, and ranks. | No. |
 | **Alarm and habit data** (wake-up times, duty days, streaks, ranks, onboarding answers) | Stored locally on your device. | To run alarms, streaks, and the rank ladder. | No. |
 | **Subscription data** (App Store receipt, product identifier, a randomly generated pseudonymous app user ID) | Processed by Apple (payment) and RevenueCat (subscription management). We never see your name, email, or payment card details. | To activate and manage your subscription and free trial. | Yes, to Apple and RevenueCat. |
@@ -53,9 +53,9 @@ Photos are the most sensitive thing the app touches, so here is exactly what hap
 
 **Anthropic** processes the photos solely to return the analysis to you. Under Anthropic's commercial API terms, API inputs and outputs are **not used to train Anthropic's AI models**, and Anthropic automatically deletes API inputs and outputs from its systems **within 30 days** of processing. Anthropic may retain data for longer only in the exceptional case where content is flagged by its safety systems as violating its usage policy. You can read Anthropic's commercial terms and privacy documentation at [anthropic.com](https://www.anthropic.com) and [privacy.claude.com](https://privacy.claude.com).
 
-**After the analysis**, your photos and results are stored only on your device, in the app's local storage. We operate no database of user content and have no way to view, retrieve, or restore your photos.
+**After the analysis**, the app deletes your photos. Inspection photos are deleted from your device once your score and verdict have been produced; the optional benchmark photo is deleted once it has been converted into a short text description of your room's standard. While a photo briefly sits on your device awaiting analysis, it is held in temporary storage that iOS excludes from iCloud backups. What remains on your device afterwards is your inspection history: scores, verdicts, deltas, and dates. We operate no database of user content and have no way to view, retrieve, or restore anything of yours.
 
-**Please photograph your room, not your life.** Photos of a room can incidentally capture things that reveal more than tidiness: documents on a desk, medication on a nightstand, religious or political items, medical equipment, photos of other people. We ask you to frame your room only and to keep such items (and other people) out of frame. The AI model is instructed to assess tidiness and order only. If something sensitive is captured incidentally despite this, it is processed transiently as described above, is never stored on any server we operate, and is deleted from Anthropic's systems within 30 days. We do not seek, extract, or use any such information.
+**Please photograph your room, not your life.** Photos of a room can incidentally capture things that reveal more than tidiness: documents on a desk, medication on a nightstand, religious or political items, medical equipment, photos of other people. We ask you to frame your room only and to keep such items (and other people) out of frame. The AI model is instructed to assess tidiness and order only. If something sensitive is captured incidentally despite this, it is processed transiently as described above, is never stored on any server we operate, is deleted from Anthropic's systems within 30 days, and is deleted from your own device once the analysis completes. We do not seek, extract, or use any such information.
 
 ## 4. Automated analysis, not automated decisions
 
@@ -101,7 +101,7 @@ Anthropic and RevenueCat are based in the United States, so the limited data des
 
 ## 8. Retention
 
-- **On your device:** photos, inspection history, and all habit data remain until you delete them in the app or delete the app itself. Deleting the app deletes everything.
+- **On your device:** inspection photos are deleted automatically once the analysis is complete, and the benchmark photo once its text description has been extracted. Your inspection history (scores, verdicts, deltas, dates) and all habit data remain until you delete them in the app or delete the app itself. Deleting the app deletes everything.
 - **Our relay server:** photos and results are never stored. Technical security logs are automatically deleted within **7 days**.
 - **Anthropic:** API inputs and outputs are automatically deleted within 30 days, with the safety exception described in section 3.
 - **RevenueCat:** retains subscription records for as long as needed to manage subscriptions and meet its legal obligations, as described in its own privacy policy.
@@ -114,7 +114,7 @@ Under the GDPR you have rights of access, rectification, erasure, restriction, p
 Here is the honest picture of how those rights work with an app built like this one:
 
 - **Withdrawing consent for AI analysis** takes one tap: Settings → "AI analysis". Turning it off disables the inspection feature until you turn it back on. You can also simply delete the app.
-- **For your photos and inspection data**, you already hold the data and the controls. Everything is on your device: you can view it, export it (your photos are ordinary images), and erase it instantly by deleting your history or the app. We could not fulfil an access or erasure request on our side even if we wanted to, because we hold no user content and cannot identify which data would be yours. GDPR recognises this situation: where a controller cannot identify a data subject, certain rights obligations do not apply (Art. 11 GDPR).
+- **For your inspection data**, you already hold the data and the controls. Your photos are deleted automatically after analysis; your history and habit data are on your device, where you can view them and erase them instantly by deleting your history or the app. We could not fulfil an access or erasure request on our side even if we wanted to, because we hold no user content and cannot identify which data would be yours. GDPR recognises this situation: where a controller cannot identify a data subject, certain rights obligations do not apply (Art. 11 GDPR).
 - **For subscription data**, contact us at jnlaurentjosi@gmail.com and we will coordinate with RevenueCat, or you can contact RevenueCat directly. Payment data is held by Apple and subject to your rights under Apple's policies.
 - **For anything else**, email us at **jnlaurentjosi@gmail.com**. We respond within one month.
 
